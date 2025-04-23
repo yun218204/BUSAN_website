@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>探索旅遊</title>
+    <link rel="stylesheet" href="關於.css" />
+  </head>
+  <style>
+    /* Modal 樣式 */
+    .modal {
+      display: none; /* 預設隱藏 */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 300px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+    }
+    .modal-content form {
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-content form input {
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+    }
+    .modal-content form button {
+      padding: 10px;
+      background-color: #6a11cb;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .modal-content form button:hover {
+      background-color: #2575fc;
+    }
+    /* 新增註冊連結樣式 */
+    .register-link {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .register-link a {
+      text-decoration: none;
+      color: #2575fc;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <!-- 其他原始碼內容保持不變 -->
+    <div class="bubble-container">
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+    </div>
+
+    <div class="head">
+      <div class="logo">
+        <div class="title">
+          <p>
+            <a
+              href="./index.html"
+              style="text-decoration: none; color: rgba(236, 107, 107, 0.8)"
+              >喜歡旅行</a
+            >
+          </p>
+        </div>
+        <div class="sign">
+          <a href="#" id="member-link">會員專區</a><a href="#">同業專區</a>
+        </div>
+      </div>
+      <div class="navList">
+        <ul class="list">
+          <li><a href="#">主題專區</a></li>
+          <li><a href="#">國旅專區</a></li>
+          <li><a href="#">團體旅遊</a></li>
+          <li><a href="#">自由行專區</a></li>
+          <li><a href="#">機加酒</a></li>
+          <li><a href="#">訂房專區</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner">
+      <img src="./img/ZhenhaiPort_Fes.jpg" alt="bg" class="bg" />
+
+      <div class="banner-text">
+        <h1>探索旅遊</h1>
+        <p>各式主題旅遊!探索世界</p>
+      </div>
+    </div>
+    <main class="main">
+      <div class="redColor">
+        <span>首頁</span>
+        <span>></span>
+        <span style="color: red">探索旅遊</span>
+      </div>
+    </main>
+    <div class="explore">
+      <div class="sideleft">
+        <h2>旅遊快速查詢</h2>
+        <form>
+          <!-- 出發城市 -->
+          <div class="form-group">
+            <label for="departure-city">出發城市：</label>
+            <select id="departure-city" name="departure-city">
+              <option value="">所有城市</option>
+              <option value="taipei">台北</option>
+              <option value="taichung">台中</option>
+              <option value="kaohsiung">高雄</option>
+            </select>
+          </div>
+          <!-- 出發期間 -->
+          <div class="form-group">
+            <label for="date-range">出發日期：</label>
+            <input
+              type="date"
+              id="date-range"
+              name="date-range"
+              placeholder="選擇日期區間"
+            />
+          </div>
+          <!-- 旅遊天數 -->
+          <div class="form-group">
+            <label for="days">旅遊天數：</label>
+            <input type="number" id="days" name="days" placeholder="天數" />
+          </div>
+          <!-- 旅遊預算 -->
+          <div class="form-group">
+            <label for="budget">旅遊預算：</label>
+            <input type="number" id="budget" name="budget" placeholder="金額" />
+          </div>
+          <!-- 關鍵字 -->
+          <div class="form-group">
+            <label for="keyword">關鍵字：</label>
+            <input
+              type="text"
+              id="keyword"
+              name="keyword"
+              placeholder="請輸入關鍵字"
+            />
+          </div>
+          <!-- 排列順序（Radio） -->
+          <div class="form-group order-radio">
+            <span>排列順序：</span>
+            <label>
+              <input type="radio" name="order" value="date" checked />
+              依出發日期
+            </label>
+            <label>
+              <input type="radio" name="order" value="price" />
+              依售價
+            </label>
+          </div>
+          <!-- 搜尋方式（Checkbox） -->
+          <div class="form-group checkboxes">
+            <label>
+              <input type="checkbox" name="search-type" value="category" />
+              以行程分類搜尋
+            </label>
+            <label>
+              <input type="checkbox" name="search-type" value="daily" />
+              以每日行程搜尋
+            </label>
+          </div>
+          <!-- 搜尋按鈕 -->
+          <button type="submit" class="search-btn">搜尋</button>
+        </form>
+      </div>
+      <div class="sideright">
+        <!-- 12 個產品卡片 -->
+        <div class="card">
+          <img src="./img/食物.jpg" alt="食物" style="width: 100%" />
+          <h1>釜山美食5日遊</h1>
+          <p class="price">179,00元起</p>
+          <p>
+            帶你品嚐最道地的釜山佳餚，從傳統市場到米其林餐廳，讓味蕾享受極致滿足！
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="img/膠囊列車.jpg" alt="海濱列車" style="width: 100%" />
+          <h1>海濱列車6日遊</h1>
+          <p class="price">219,00元起</p>
+          <p>
+            無論是沉浸在歷史文化、漫遊海邊小鎮，還是挑戰山林步道，每一天都充滿驚喜與收穫。
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/甘川洞.jpg" alt="藝術5日遊" style="width: 100%" />
+          <h1>藝術5日遊</h1>
+          <p class="price">$199,00元起</p>
+          <p>
+            蜿蜒的小巷間藏著無數驚喜，藝術裝置、手作店鋪、文青咖啡館……。讓你細細品味這座充滿創意與故事的小鎮！
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/海雲台.jpg" alt="海雲廣安6日遊" style="width: 100%" />
+          <h1>海雲廣安6日遊</h1>
+          <p class="price">$249,00元起</p>
+          <p>
+            韓國最著名的海灘度假勝地，以金色沙灘、無敵海景、豪華飯店、美食與夜生活而聞名。
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/櫻花.jpg" alt="粉色浪漫4日遊" style="width: 100%" />
+          <h1>粉色浪漫4日遊</h1>
+          <p class="price">159,00元起</p>
+          <p>
+            帶你走遍釜山最美的賞櫻景點，搭配在地美食、浪漫夜景與溫泉放鬆，享受最極致的春日旅行！
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/校服.jpg" alt="夢幻青春5日遊" style="width: 100%" />
+          <h1>夢幻青春5日遊</h1>
+          <p class="price">229,00元起</p>
+          <p>
+            穿上韓國校服來場青春偶像劇般的旅行！校服體驗之旅，不僅能暢玩樂天世界，還能探索韓流校園文化。
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img
+            src="./img/廣安煙火.jpg"
+            alt="海岸煙火6日遊"
+            style="width: 100%"
+          />
+          <h1>海岸煙火6日遊</h1>
+          <p class="price">239,00元起</p>
+          <p>
+            欣賞燦爛煙花與夜景，搭配美食、海岸風光與在地文化，讓你的旅程充滿浪漫與驚喜！
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/壁畫村.jpg" alt="文青慢活4日遊" style="width: 100%" />
+          <h1>文青慢活4日遊</h1>
+          <p class="price">189,00元起</p>
+          <p>
+            每條小巷都充滿驚喜，讓人彷彿走進一座戶外美術館。結合韓流打卡、特色咖啡廳，每一刻都值得拍下來留念！
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/阿里山.jpg" alt="雲海鐵道3日遊" style="width: 100%" />
+          <h1>雲海鐵道3日遊</h1>
+          <p class="price">5,900元起</p>
+          <p>
+            台灣最具代表性的高山旅遊勝地，以日出、雲海、森林鐵道與神木群聞名，享受最純粹的大自然旅行！
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/澎湖.jpg" alt="絕美澎湖3日遊" style="width: 100%" />
+          <h1>絕美澎湖3日遊</h1>
+          <p class="price">8,900元起(含機票)</p>
+          <p>
+            台灣最美的離島之一!帶你暢遊海島秘境、品嚐美食、體驗水上活動，讓你的旅行充滿陽光與回憶！
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/日月潭.jpg" alt="日月潭2日遊" style="width: 100%" />
+          <h1>日月潭2日遊</h1>
+          <p class="price">3,900元起</p>
+          <p>
+            以碧綠湖水、環湖自行車道、纜車美景與原住民文化聞名，感受最療癒的湖畔假期！
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+        <div class="card">
+          <img src="./img/墾丁.jpg" alt="墾丁南灣3日遊" style="width: 100%" />
+          <h1>墾丁南灣3日遊</h1>
+          <p class="price">7,900元起</p>
+          <p>
+            墾丁擁有台灣最美的熱帶沙灘、清澈藍海、壯麗岬角，讓你盡情體驗水上活動、海景打卡、自然秘境與夜晚派對!
+          </p>
+          <p><button class="signup-btn">立即報名</button></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 報名 Modal（已登入時顯示產品詳細資訊及報名表單） -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>報名產品資訊</h2>
+        <div id="product-details">
+          <!-- 此處內容將根據點擊的產品動態更新 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 會員登入 Modal -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>會員登入</h2>
+        <form action="login.php" method="post" id="loginform">
+          <label for="username">帳號:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            name="username"
+            required
+          />
+          <label for="password">密碼:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">登入</button>
+        </form>
+        <!-- 新增註冊連結，不刪減原有登入內容 -->
+        <div class="register-link">
+          沒有帳號？<a href="#" id="open-register">點此註冊</a>
+        </div>
+      </div>
+    </div>
+    <!-- 會員註冊 Modal -->
+    <div id="register-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>會員註冊</h2>
+        <form action="register.php" method="post" id="registerform">
+          <label for="reg-username">帳號:</label>
+          <input type="text" id="reg-username" name="reg-username" required />
+
+          <label for="reg-password">密碼:</label>
+          <input
+            type="password"
+            id="reg-password"
+            name="reg-password"
+            required
+          />
+
+          <label for="reg-phone">電話:</label>
+          <input
+            type="tel"
+            id="reg-phone"
+            name="reg-phone"
+            placeholder="請輸入電話"
+            required
+          />
+
+          <label for="reg-email">Email:</label>
+          <input
+            type="email"
+            id="reg-email"
+            name="reg-email"
+            placeholder="請輸入電子郵件"
+            required
+          />
+
+          <button type="submit">註冊</button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer-text">
+      <div class="toptext">
+        <h4>喜歡旅行社股份有限公司</h4>
+        <p>代表人:YUN</p>
+        <p>公司電話:0912345678</p>
+        <p>上班時間:周一至周五08:30~17:30</p>
+        <p>地址:台中市南屯區公益路二段51號</p>
+      </div>
+      <div class="bottomtext">
+        <p>&copy; 2025 Love Traveling. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      let head = document.querySelector(".head");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY == 0) {
+          head.style.boxShadow = "none"; // **當滾動回到頂部時，移除陰影**
+        } else {
+          head.style.boxShadow = "0 10px 6px -6px #777"; // **滾動時增加陰影**
+        }
+      });
+      // 當點擊「會員專區」時顯示登入 modal
+      let memberLink = document.getElementById("member-link");
+      let loginModal = document.getElementById("login-modal");
+      memberLink.addEventListener("click", function (e) {
+        e.preventDefault(); // 防止連結跳轉
+        loginModal.style.display = "block"; // 顯示 modal
+      });
+
+      // 針對所有 modal 的關閉按鈕設定點擊事件
+      document.querySelectorAll(".modal .close").forEach(function (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          closeBtn.parentElement.parentElement.style.display = "none";
+        });
+      });
+
+      // 點擊「點此註冊」連結：關閉登入 modal，開啟註冊 modal
+      let openRegister = document.getElementById("open-register");
+      openRegister.addEventListener("click", function (e) {
+        e.preventDefault();
+        loginModal.style.display = "none";
+        let registerModal = document.getElementById("register-modal");
+        registerModal.style.display = "block";
+      });
+
+      // 點擊 Modal 區域外側關閉
+      window.addEventListener("click", function (e) {
+        const loginModal = document.getElementById("login-modal");
+        const signupModal = document.getElementById("signup-modal");
+        if (e.target == loginModal) {
+          loginModal.style.display = "none";
+        }
+        if (e.target == signupModal) {
+          signupModal.style.display = "none";
+        }
+      });
+
+      // 關閉 Modal 事件
+      document.querySelectorAll(".modal .close").forEach((closeBtn) => {
+        closeBtn.addEventListener("click", function () {
+          closeBtn.parentElement.parentElement.style.display = "none";
+        });
+      });
+      let isLoggedIn = false; // 預設未登入
+
+      // A呼叫 check.php 檢查登入狀態
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "check.php", true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          if (xhr.responseText.trim() === '{"status":"logged_in"}') {
+            isLoggedIn = true; // 若已登入設定為 true
+          }
+        } else {
+          console.error("發生錯誤: 無法檢查登入狀態");
+        }
+      };
+      xhr.send();
+      //
+      //let isLoggedIn = false;
+      let memberUID = null;
+      // AJAX 檢查登入狀態
+      //let xhr = new XMLHttpRequest();
+      xhr.open("GET", "check.php", true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          let response = JSON.parse(xhr.responseText);
+          if (response.status === "logged_in") {
+            isLoggedIn = true;
+            memberUID = response.member_uid;
+          }
+        }
+      };
+      xhr.send();
+
+      // 點擊「立即報名」
+      document.querySelectorAll(".signup-btn").forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (!isLoggedIn) {
+            document.getElementById("login-modal").style.display = "block";
+          } else {
+            // 已登入更新 Modal 內的產品資訊
+            let productDetails = document.getElementById("product-details");
+
+            // 根據點擊的產品卡片填入詳細資料
+            let card = button.closest(".card");
+            let productName = card.querySelector("h1").innerText;
+            let productPrice = card.querySelector(".price").innerText;
+            let productDescription =
+              card.querySelector("p:not(.price)").innerText;
+            // 從卡片取得產品價格
+            let rawPrice = card.querySelector(".price").innerText;
+            // 移除所有非數字與小數點字元
+            let cleanPrice = rawPrice.replace(/[^0-9.]/g, "");
+            // 如果有需要轉成浮點數
+            cleanPrice = parseFloat(cleanPrice);
+            if (isNaN(cleanPrice)) {
+              cleanPrice = "";
+            }
+            productDetails.innerHTML = `
+  <h3>${productName}</h3>
+  <p>價格：${rawPrice}</p>
+  <p>${productDescription}</p>
+  <form action="signup.php" method="post" id="signup-form">
+    
+    <input type="hidden" name="order_total" id="form-order_total" value="${cleanPrice}">
+    <button type="submit">確認報名</button>
+  </form>
+`;
+            // 顯示 Modal
+            document.getElementById("signup-modal").style.display = "block";
+          }
+        });
+      });
+
+      // 註冊表單送出事件，改用 fetch 非同步提交，避免整頁跳轉
+      document
+        .getElementById("registerform")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // 阻止預設跳轉行為
+
+          const formData = new FormData(this);
+
+          fetch("register.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.status === "success") {
+                alert("註冊成功，請登入！");
+
+                // ✅ 關閉註冊 modal
+                document.getElementById("register-modal").style.display =
+                  "none";
+
+                // ✅ 開啟登入 modal
+                document.getElementById("login-modal").style.display = "block";
+              } else if (data.status === "exists") {
+                alert("⚠️ 此帳號已存在，請使用其他帳號");
+              } else {
+                alert("❌ 註冊失敗：" + data.message);
+              }
+            })
+            .catch((err) => {
+              console.error("註冊發生錯誤：", err);
+            });
+        });
+
+      // 更新登入後的header文字
+      function updateHeaderAfterLogin(username) {
+        const signDiv = document.querySelector(".sign");
+        signDiv.innerHTML = `<span style="color: #2575fc;">${username} 你好</span>`;
+      }
+
+      document
+        .getElementById("loginform")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // 阻止表單跳轉
+
+          const formData = new FormData(this);
+
+          fetch("login.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.status === "success") {
+                alert("登入成功！");
+
+                // ✅ 更新右上角文字
+                updateHeaderAfterLogin(data.username);
+
+                // ✅ 關閉登入 modal
+                document.getElementById("login-modal").style.display = "none";
+
+                // ✅ 設定狀態為已登入（供報名功能用）
+                isLoggedIn = true;
+                memberUID = data.member_uid;
+              } else {
+                alert("登入失敗：" + data.message);
+              }
+            })
+            .catch((err) => {
+              console.error("登入錯誤：", err);
+            });
+        });
+      // 每次進入探索.html 時，前端自己詢問登入狀態
+      window.addEventListener("DOMContentLoaded", () => {
+        fetch("check.php")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "logged_in") {
+              updateHeaderAfterLogin(data.username);
+              isLoggedIn = true;
+            }
+          });
+      });
+
+      // 顯示登入後的歡迎文字
+      function updateHeaderAfterLogin(username) {
+        const signDiv = document.querySelector(".sign");
+        signDiv.innerHTML = `<span style="color:#2575fc;">${username} 你好</span>`;
+      }
+    </script>
+  </body>
+</html>

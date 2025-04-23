@@ -1,0 +1,692 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+html .bubble-container,
+body .bubble-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+html .bubble-container .bubble,
+body .bubble-container .bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8), 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: float 8s infinite ease-in-out;
+}
+html .bubble-container .bubble:nth-child(2),
+body .bubble-container .bubble:nth-child(2) {
+  width: 100px;
+  height: 100px;
+  opacity: 0.85;
+  animation-duration: 10s;
+  left: 10%;
+}
+html .bubble-container .bubble:nth-child(3),
+body .bubble-container .bubble:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  opacity: 0.9;
+  animation-duration: 12s;
+  left: 25%;
+}
+html .bubble-container .bubble:nth-child(4),
+body .bubble-container .bubble:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  opacity: 0.95;
+  animation-duration: 9s;
+  left: 40%;
+}
+html .bubble-container .bubble:nth-child(5),
+body .bubble-container .bubble:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  opacity: 0.9;
+  animation-duration: 11s;
+  left: 55%;
+}
+html .bubble-container .bubble:nth-child(6),
+body .bubble-container .bubble:nth-child(6) {
+  width: 120px;
+  height: 120px;
+  opacity: 0.85;
+  animation-duration: 11s;
+  left: 70%;
+}
+html .bubble-container .bubble:nth-child(7),
+body .bubble-container .bubble:nth-child(7) {
+  width: 70px;
+  height: 70px;
+  opacity: 0.9;
+  animation-duration: 7s;
+  left: 85%;
+}
+html .bubble-container .bubble:nth-child(8),
+body .bubble-container .bubble:nth-child(8) {
+  width: 110px;
+  height: 110px;
+  opacity: 0.8;
+  animation-duration: 10s;
+  left: 95%;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-50vh) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
+html .head,
+body .head {
+  width: 100%;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0 150px;
+  background-image: url("./img/背景警.jpg");
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+}
+html .head .logo,
+body .head .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+html .head .logo .title,
+body .head .logo .title {
+  font-size: 2rem;
+  color: black;
+  font-weight: 700;
+}
+html .head .logo .sign a,
+body .head .logo .sign a {
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1rem;
+  color: black;
+  font-weight: 600;
+  background-color: antiquewhite;
+  padding: 1rem;
+  border-radius: 25px;
+}
+html .head .logo .sign a:hover,
+body .head .logo .sign a:hover {
+  text-decoration: underline;
+}
+html .head .navList,
+body .head .navList {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+html .head .navList .list,
+body .head .navList .list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+html .head .navList .list li,
+body .head .navList .list li {
+  margin: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+html .head .navList .list li a,
+body .head .navList .list li a {
+  text-decoration: none;
+  color: black;
+}
+html .head .navList .list li a:hover,
+body .head .navList .list li a:hover {
+  text-decoration: underline;
+  color: red;
+}
+html .banner > img,
+body .banner > img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 30vh;
+  position: relative;
+  filter: brightness(50%);
+}
+html .banner,
+body .banner {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+}
+html .banner .banner-text,
+body .banner .banner-text {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+html .banner .banner-text h1,
+body .banner .banner-text h1 {
+  color: #f8f9fa;
+  font-weight: 800;
+  padding-left: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-family: "DFKai-SB", "BiauKai", serif;
+}
+html .banner .banner-text p,
+body .banner .banner-text p {
+  color: aliceblue;
+  font-weight: 300;
+  font-family: "DFKai-SB", "BiauKai", serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+html .main,
+body .main {
+  background-image: url("./img/背景警.jpg");
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+}
+html .main .redColor,
+body .main .redColor {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+}
+html .main .mainText,
+body .main .mainText {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+}
+html .main .mainText .left,
+body .main .mainText .left {
+  padding-right: 2rem;
+}
+html .main .mainText .left h2,
+body .main .mainText .left h2 {
+  margin-top: 1rem;
+}
+html .main .mainText .left h4,
+body .main .mainText .left h4 {
+  margin-top: 3rem;
+}
+html .main .mainText .left p,
+body .main .mainText .left p {
+  letter-spacing: 0.1rem;
+}
+html .main .mainText .right,
+body .main .mainText .right {
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .main .mainText .right img,
+body .main .mainText .right img {
+  margin-top: 1rem;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+html .contactText,
+body .contactText {
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
+  padding: 2rem;
+  background-image: url("./img/背景警.jpg");
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+}
+html .contactText h2,
+body .contactText h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+html .contactText .myForm,
+body .contactText .myForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+html .contactText .myForm .form-group,
+body .contactText .myForm .form-group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+html .contactText .myForm .form-group label,
+body .contactText .myForm .form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+html .contactText .myForm .form-group input,
+html .contactText .myForm .form-group textarea,
+body .contactText .myForm .form-group input,
+body .contactText .myForm .form-group textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+html .contactText .myForm .form-group input:focus,
+html .contactText .myForm .form-group textarea:focus,
+body .contactText .myForm .form-group input:focus,
+body .contactText .myForm .form-group textarea:focus {
+  border-color: #21232b;
+  outline: none;
+}
+html .contactText .myForm .gender,
+body .contactText .myForm .gender {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+html .contactText .myForm .gender label,
+body .contactText .myForm .gender label {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-weight: bold;
+}
+html .contactText .myForm .gender label input,
+body .contactText .myForm .gender label input {
+  margin-right: 0.5rem;
+}
+html .contactText .myForm button.btn,
+body .contactText .myForm button.btn {
+  background-color: #708090;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #8ea1b0;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  width: 10%;
+  margin: 0 auto;
+}
+html .contactText .myForm button.btn:hover,
+body .contactText .myForm button.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #5c6973;
+}
+html .contactText .myForm button.btn:active,
+body .contactText .myForm button.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 0 #5c6973;
+}
+html .line-chat,
+body .line-chat {
+  position: fixed;
+  bottom: 10px;
+}
+html .line-chat:hover,
+body .line-chat:hover {
+  transform: scale(1.1);
+}
+html .line-chat img,
+body .line-chat img {
+  width: 200px;
+}
+html .section-container,
+body .section-container {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-image: url("/img/背景警.jpg");
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+html .section-container .cus,
+body .section-container .cus {
+  font-size: 2rem;
+}
+html .section-container .custext,
+body .section-container .custext {
+  font-size: 2rem;
+}
+html .section-container h3,
+body .section-container h3 {
+  color: #cc3700;
+  margin: 1rem 0;
+}
+html .section-container .group input,
+body .section-container .group input {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+html .section-container .group input:focus,
+body .section-container .group input:focus {
+  border-color: #ff4500;
+  box-shadow: 0px 0px 8px rgba(255, 69, 0, 0.5);
+  outline: none;
+}
+html .section-container .radio-options,
+body .section-container .radio-options {
+  display: flex;
+  gap: 20px;
+}
+html .section-container .radio-options label,
+body .section-container .radio-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+html .section-container #btn,
+body .section-container #btn {
+  background-color: rgba(67, 110, 209, 0.998);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+html .section-container #btn:hover,
+body .section-container #btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+html .section-container #btn:active,
+body .section-container #btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+html div.explore,
+body div.explore {
+  display: flex;
+  background-image: url("./img/背景警.jpg");
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+}
+html div.explore div.sideleft,
+body div.explore div.sideleft {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(244, 172, 228, 0.262745098), rgba(108, 207, 243, 0.6588235294));
+  position: fixed;
+  height: 100vh;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+html div.explore div.sideleft .form-group,
+body div.explore div.sideleft .form-group {
+  padding: 0.5rem 0;
+}
+html div.explore .search-btn,
+body div.explore .search-btn {
+  padding: 0 1rem;
+  margin-top: 0.5rem;
+}
+html div.explore div.sideright,
+body div.explore div.sideright {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  max-width: 1200px;
+}
+html div.explore div.sideright .card,
+body div.explore div.sideright .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  width: 280px;
+}
+html div.explore div.sideright .card img,
+body div.explore div.sideright .card img {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+html div.explore div.sideright .card .price,
+body div.explore div.sideright .card .price {
+  color: grey;
+  font-size: 22px;
+}
+html div.explore div.sideright .card button,
+body div.explore div.sideright .card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+html div.explore div.sideright .card button:hover,
+body div.explore div.sideright .card button:hover {
+  opacity: 0.7;
+}
+html .footer-text .toptext,
+body .footer-text .toptext {
+  background-color: #5c6973;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+html .footer-text .toptext h4,
+body .footer-text .toptext h4 {
+  margin: 0.5rem;
+  font-size: 1.3rem;
+  color: #cbd7f3;
+  font-weight: bold;
+}
+html .footer-text .toptext p,
+body .footer-text .toptext p {
+  margin: 0.5rem;
+  color: #e3eaf9;
+  font-weight: 600;
+}
+html .footer-text .bottomtext,
+body .footer-text .bottomtext {
+  background-color: #5c6973;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: color 0.3s ease-in-out;
+  text-align: center;
+}
+html .footer-text .bottomtext:hover,
+body .footer-text .bottomtext:hover {
+  color: #cbd7f3;
+}
+html .pilgrimage-btn,
+body .pilgrimage-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+html .pilgrimage-btn:hover,
+body .pilgrimage-btn:hover {
+  background: linear-gradient(135deg, #ff3d7f, #ff4f8c);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+html .pilgrimage-btn::after,
+body .pilgrimage-btn::after {
+  content: "→";
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  html .pilgrimage-btn,
+  body .pilgrimage-btn {
+    font-size: 10px;
+    padding: 8px 16px;
+    bottom: 200px;
+  }
+}
+@media (max-width: 480px) {
+  html .pilgrimage-btn,
+  body .pilgrimage-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  html .head,
+  body .head {
+    padding: 10px;
+  }
+  html .title,
+  body .title {
+    display: none;
+  }
+  html .logo,
+  body .logo {
+    flex-direction: column;
+    align-items: center;
+  }
+  html .navList ul,
+  body .navList ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  html .menu-icon,
+  body .menu-icon {
+    display: block;
+  }
+  html .banner,
+  body .banner {
+    height: auto;
+  }
+  html .banner-text h1,
+  body .banner-text h1 {
+    font-size: 1.5rem;
+  }
+  html .line-chat img,
+  body .line-chat img {
+    width: 100px;
+  }
+  html .btn,
+  body .btn {
+    width: 150px !important;
+  }
+  html .mainText,
+  body .mainText {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  html .mainText .right img,
+  body .mainText .right img {
+    display: none;
+  }
+  html .explore,
+  body .explore {
+    /* flex-direction: column; /* 改為垂直排列 */
+    padding: 10px;
+    /* 讓 `.card` 靠左對齊 */
+  }
+  html .explore .sideleft,
+  body .explore .sideleft {
+    display: none; /* 隱藏左側篩選區 */
+  }
+  html .explore .sideright,
+  body .explore .sideright {
+    width: 100%; /* 讓右側區塊占滿全螢幕 */
+    margin-left: 0;
+    display: block; /* 讓內容能自然排列 */
+  }
+  html .explore .sideright .card,
+  body .explore .sideright .card {
+    width: 100%; /* 讓每個卡片占滿一行 */
+    max-width: 350px; /* 限制最大寬度 */
+    margin: 10px 0; /* 讓卡片靠左，並給點間距 */
+  }
+}/*# sourceMappingURL=關於.css.map */

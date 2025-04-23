@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>關於我們</title>
+    <link rel="stylesheet" href="關於.css" />
+    <style>
+      /* Modal 樣式 */
+      .modal {
+        display: none; /* 預設隱藏 */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 300px;
+        border-radius: 8px;
+        position: relative;
+      }
+      .modal-content h2 {
+        margin-top: 0;
+      }
+      .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        cursor: pointer;
+      }
+      .modal-content form {
+        display: flex;
+        flex-direction: column;
+      }
+      .modal-content form input {
+        margin-bottom: 10px;
+        padding: 8px;
+        font-size: 16px;
+      }
+      .modal-content form button {
+        padding: 10px;
+        background-color: #6a11cb;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .modal-content form button:hover {
+        background-color: #2575fc;
+      }
+      /* 註冊連結樣式 */
+      .register-link {
+        margin-top: 10px;
+        text-align: center;
+      }
+      .register-link a {
+        text-decoration: none;
+        color: #2575fc;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bubble-container">
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+    </div>
+
+    <div class="head">
+      <div class="logo">
+        <div class="title">
+          <p>
+            <a
+              href="./index.html"
+              style="text-decoration: none; color: rgba(236, 107, 107, 0.8)"
+              >喜歡旅行</a
+            >
+          </p>
+        </div>
+        <div class="sign">
+          <a href="#" id="member-link">會員專區</a><a href="#">同業專區</a>
+        </div>
+      </div>
+      <div class="navList">
+        <ul class="list">
+          <li><a href="#">主題專區</a></li>
+          <li><a href="#">國旅專區</a></li>
+          <li><a href="#">團體旅遊</a></li>
+          <li><a href="#">自由行專區</a></li>
+          <li><a href="#">機加酒</a></li>
+          <li><a href="#">訂房專區</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner">
+      <img src="/ispan小專/img/ZhenhaiPort_Fes.jpg" alt="" />
+      <div class="banner-text">
+        <h1>喜歡旅行</h1>
+        <p>2010成立，讓您享受旅行</p>
+      </div>
+    </div>
+    <main class="main">
+      <div class="redColor">
+        <span>首頁</span>
+        <span>></span>
+        <span style="color: red">關於我們</span>
+      </div>
+      <div class="mainText">
+        <div class="left">
+          <h2>旅行社創立沿革與歷史</h2>
+          <p>
+            喜歡旅行社創立於 2010 年，秉持著 「讓旅遊更美好」
+            的理念，致力於提供優質、專業且多樣化的旅遊服務。我們從一間小型的旅遊諮詢公司起家，透過創新的服務模式與顧客至上的態度，逐步發展成為知名的綜合旅遊品牌。
+          </p>
+          <h4>創立初期（2010 - 2015 年）</h4>
+          <p>
+            2010 年，由一群熱愛旅遊的專業人士共同創立，初期專注於
+            國內旅遊與自由行規劃。<br />
+            2012 年，與多家國際飯店與航空公司合作，推出 機加酒自由行
+            產品，提升客戶體驗。<br />
+            2015 年，正式拓展至
+            企業包團與客製化行程，並獲得多家企業指定為年度旅遊規劃夥伴。
+          </p>
+          <h4>穩定成長（2016 - 2020 年）</h4>
+          <p>
+            2016 年，開發東南亞深度旅遊，推出泰國、越南、峇里島等特色行程。<br />
+            2018年，推出歐洲豪華深度遊，結合當地文化體驗，讓旅客享受高端旅遊服務。
+            <br />
+            2019 年，成立 線上旅遊平台，提供即時訂房、電子機票與智慧行程推薦。
+          </p>
+          <h4>創新與數位轉型（2021 - 至今）</h4>
+          <p>
+            2021 年，推動 智慧旅遊 AI
+            導覽，讓旅客透過手機即可獲取當地景點介紹與語音導覽。<br />
+            2022 年，導入
+            區塊鏈技術，推出安全可靠的電子旅遊證明與會員積分制度。<br />
+            2023 年，成立 全球旅遊顧問團隊，提供 24
+            小時線上客服，讓旅客無論身在何處都能獲得即時協助。<br />
+            2024 年，開拓
+            永續旅遊計畫，與國際環保組織合作，推動「低碳旅行」與「生態旅遊」概念，帶領旅客深度體驗並減少旅遊對環境的影響。
+          </p>
+        </div>
+        <div class="right">
+          <img src="./img/right.jpg" alt="" />
+        </div>
+      </div>
+    </main>
+
+    <!-- 會員登入 Modal -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>會員登入</h2>
+        <form>
+          <label for="login-username">帳號:</label>
+          <input
+            type="text"
+            id="login-username"
+            name="login-username"
+            required
+          />
+          <label for="login-password">密碼:</label>
+          <input
+            type="password"
+            id="login-password"
+            name="login-password"
+            required
+          />
+          <button type="submit">登入</button>
+        </form>
+        <div class="register-link">
+          沒有帳號？<a href="#" id="open-register">點此註冊</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 新增註冊 Modal -->
+    <div id="register-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>會員註冊</h2>
+        <form>
+          <label for="reg-username">帳號:</label>
+          <input type="text" id="reg-username" name="reg-username" required />
+
+          <label for="reg-password">密碼:</label>
+          <input
+            type="password"
+            id="reg-password"
+            name="reg-password"
+            required
+          />
+
+          <label for="reg-phone">電話:</label>
+          <input
+            type="tel"
+            id="reg-phone"
+            name="reg-phone"
+            placeholder="請輸入電話"
+            required
+          />
+
+          <label for="reg-email">Email:</label>
+          <input
+            type="email"
+            id="reg-email"
+            name="reg-email"
+            placeholder="請輸入電子郵件"
+            required
+          />
+
+          <button type="submit">註冊</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer-text">
+      <div class="toptext">
+        <h4>喜歡旅行社股份有限公司</h4>
+        <p>代表人:YUN</p>
+        <p>公司電話:0912345678</p>
+        <p>上班時間:周一至周五08:30~17:30</p>
+        <p>地址:台中市南屯區公益路二段51號</p>
+      </div>
+      <div class="bottomtext">
+        <p>&copy; 2025 Love Traveling. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // 當點擊「會員專區」時，顯示登入 modal
+      let memberLink = document.getElementById("member-link");
+      let loginModal = document.getElementById("login-modal");
+      let registerModal = document.getElementById("register-modal");
+      let openRegister = document.getElementById("open-register");
+
+      memberLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        loginModal.style.display = "block";
+      });
+
+      // 為所有 modal 的關閉按鈕加上點擊事件
+      document.querySelectorAll(".modal .close").forEach(function (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          closeBtn.parentElement.parentElement.style.display = "none";
+        });
+      });
+
+      // 點擊「點此註冊」連結，關閉登入 modal 並顯示註冊 modal
+      openRegister.addEventListener("click", function (e) {
+        e.preventDefault();
+        loginModal.style.display = "none";
+        registerModal.style.display = "block";
+      });
+
+      // 點擊 modal 區域外側時，關閉相應 modal
+      window.addEventListener("click", function (e) {
+        if (e.target == loginModal) {
+          loginModal.style.display = "none";
+        }
+        if (e.target == registerModal) {
+          registerModal.style.display = "none";
+        }
+      });
+
+      // 自動檢查是否登入
+      window.addEventListener("DOMContentLoaded", () => {
+        fetch("check.php")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "logged_in") {
+              updateHeaderAfterLogin(data.username);
+              closeAnyLoginModal(); // ✅ 自動關閉 modal
+            }
+          })
+          .catch((err) => console.error("登入狀態檢查錯誤：", err));
+      });
+
+      // 顯示 xxx你好 並隱藏登入按鈕
+      function updateHeaderAfterLogin(username) {
+        const signDiv = document.querySelector(".sign");
+        const loginBtn =
+          document.getElementById("member-login-btn") ||
+          document.getElementById("member-link");
+        if (signDiv) {
+          signDiv.innerHTML = `<span style="color:#2575fc;">${username} 你好</span>`;
+        }
+        if (loginBtn) {
+          loginBtn.style.display = "none";
+        }
+      }
+
+      // 若 modal 存在則關閉
+      function closeAnyLoginModal() {
+        const loginModalEl =
+          document.getElementById("loginModal") ||
+          document.getElementById("login-modal");
+        if (loginModalEl) {
+          const instance = bootstrap.Modal.getInstance(loginModalEl);
+          if (instance) {
+            instance.hide();
+          } else {
+            loginModalEl.style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

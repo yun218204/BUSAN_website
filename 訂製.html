@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>訂製旅遊</title>
+    <link rel="stylesheet" href="關於.css" />
+  </head>
+  <style>
+    /* Modal 樣式 */
+    .modal {
+      display: none; /* 預設隱藏 */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 300px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+    }
+    .modal-content form {
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-content form input {
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+    }
+    .modal-content form button {
+      padding: 10px;
+      background-color: #6a11cb;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .modal-content form button:hover {
+      background-color: #2575fc;
+    }
+    /* 新增註冊連結樣式 */
+    .register-link {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .register-link a {
+      text-decoration: none;
+      color: #2575fc;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div class="bubble-container">
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+    </div>
+
+    <div class="head">
+      <div class="logo">
+        <div class="title">
+          <p>
+            <a
+              href="./index.html"
+              style="text-decoration: none; color: rgba(236, 107, 107, 0.8)"
+              >喜歡旅行</a
+            >
+          </p>
+        </div>
+        <div class="sign">
+          <a href="#" id="member-link">會員專區</a><a href="#">同業專區</a>
+        </div>
+      </div>
+      <div class="navList">
+        <ul class="list">
+          <li><a href="#">主題專區</a></li>
+          <li><a href="#">國旅專區</a></li>
+          <li><a href="#">團體旅遊</a></li>
+          <li><a href="#">自由行專區</a></li>
+          <li><a href="#">機加酒</a></li>
+          <li><a href="#">訂房專區</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner">
+      <img src="/ispan小專/img/ZhenhaiPort_Fes.jpg" alt="" />
+      <div class="banner-text">
+        <h1>訂製旅遊</h1>
+        <p>歡迎量身訂做各式旅遊</p>
+      </div>
+    </div>
+    <main class="main">
+      <div class="redColor">
+        <span>首頁</span>
+        <span>></span>
+        <span style="color: red">訂製旅遊</span>
+      </div>
+    </main>
+
+    <div class="section-container">
+      <div>
+        <h3 class="cus">量身訂做</h3>
+        <p class="custext">
+          請填寫以下需求單，將有專人為您服務; 自組一團限16人以上之團體。
+        </p>
+      </div>
+      <div>
+        <div><h3>訂製旅遊類別</h3></div>
+        <div>
+          <label>
+            <input type="radio" name="recruitType" value="獎勵旅遊" required />
+            獎勵旅遊
+          </label>
+          <label>
+            <input type="radio" name="recruitType" value="員工旅遊" />
+            員工旅遊
+          </label>
+          <label>
+            <input type="radio" name="recruitType" value="自組一團" />
+            自組一團
+          </label>
+        </div>
+      </div>
+      <div>
+        <div><h3>聯絡人資料</h3></div>
+        <div class="group">
+          <input
+            type="text"
+            id="company-name"
+            name="company-name"
+            placeholder="請輸入公司名稱"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="comptact-people"
+            name="comptact-people"
+            placeholder="請輸入聯絡人姓名"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="comptact-phone"
+            name="comptact-phone"
+            placeholder="手機號碼"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="fax"
+            name="fax"
+            placeholder="傳真號碼"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="mail"
+            name="mail"
+            placeholder="電子信箱"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="tell"
+            name="tell"
+            placeholder="連絡電話"
+            required
+          />
+        </div>
+      </div>
+      <div>
+        <div><h3>旅遊需求</h3></div>
+        <div class="group">
+          <input
+            type="text"
+            id="place"
+            name="place"
+            placeholder="旅遊地點"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="traveltype"
+            name="traveltype"
+            placeholder="旅遊型態(自由行/需導遊)"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="day"
+            name="day"
+            placeholder="旅遊天數"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="region"
+            name="region"
+            placeholder="旅遊區域(國內/國外)"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="date"
+            name="date"
+            placeholder="出發日期"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="money"
+            name="money"
+            placeholder="旅遊預算"
+            required
+          />
+        </div>
+      </div>
+      <div>
+        <h3>服務需求</h3>
+        <div class="group">
+          <input
+            type="text"
+            id="airport"
+            name="airport"
+            placeholder="兩地機場交通接送(需要/不需要)"
+            required
+          />
+        </div>
+        <div class="group">
+          <input
+            type="text"
+            id="leader"
+            name="leader"
+            placeholder="導遊/司機服務"
+            required
+          />
+        </div>
+      </div>
+      <button id="btn">送出表單</button>
+    </div>
+    <!-- 原始登入 Modal，內容保持不變，僅新增註冊連結 -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>會員登入</h2>
+        <form>
+          <label for="username">帳號:</label>
+          <input type="text" id="username" name="username" required />
+          <label for="password">密碼:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">登入</button>
+        </form>
+        <div class="register-link">
+          沒有帳號？<a href="#" id="open-register">點此註冊</a>
+        </div>
+      </div>
+    </div>
+    <!-- 新增註冊 Modal -->
+    <div id="register-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>會員註冊</h2>
+        <form>
+          <label for="reg-username">帳號:</label>
+          <input
+            type="text"
+            id="reg-username"
+            name="reg-username"
+            placeholder="請輸入帳號"
+          />
+          <label for="reg-password">密碼:</label>
+          <input
+            type="password"
+            id="reg-password"
+            name="reg-password"
+            placeholder="請輸入6~12位密碼"
+            required
+          />
+          <label for="reg-phone">電話:</label>
+          <input
+            type="tel"
+            id="reg-phone"
+            name="reg-phone"
+            placeholder="請輸入電話"
+            required
+          />
+          <label for="reg-email">Email:</label>
+          <input
+            type="email"
+            id="reg-email"
+            name="reg-email"
+            placeholder="請輸入電子郵件"
+            required
+          />
+          <button type="submit">註冊</button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer-text">
+      <div class="toptext">
+        <h4>喜歡旅行社股份有限公司</h4>
+        <p>代表人:YUN</p>
+        <p>公司電話:0912345678</p>
+        <p>上班時間:周一至周五08:30~17:30</p>
+        <p>地址:台中市南屯區公益路二段51號</p>
+      </div>
+      <div class="bottomtext">
+        <p>&copy; 2025 Love Traveling. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      let head = document.querySelector(".head");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY == 0) {
+          head.style.boxShadow = "none"; // 當滾動回到頂部時移除陰影
+        } else {
+          head.style.boxShadow = "0 10px 6px -6px #777"; // 滾動時增加陰影
+        }
+      });
+      // 當點擊會員專區時顯示登入modal
+      let memberLink = document.getElementById("member-link");
+      let loginModal = document.getElementById("login-modal");
+      let closeModal = document.querySelector(".modal-content .close");
+
+      memberLink.addEventListener("click", function (e) {
+        e.preventDefault(); // 防止連結跳轉
+        loginModal.style.display = "block"; // 顯示 modal
+      });
+
+      // 點擊右上角的 × 關閉 modal
+      closeModal.addEventListener("click", function () {
+        loginModal.style.display = "none";
+      });
+
+      // 點擊 modal 區域外側關閉 modal
+      window.addEventListener("click", function (e) {
+        if (e.target == loginModal) {
+          loginModal.style.display = "none";
+        }
+        if (e.target == document.getElementById("register-modal")) {
+          document.getElementById("register-modal").style.display = "none";
+        }
+      });
+
+      // 註冊連結事件點擊後關閉登入 modal顯示註冊 modal
+      let openRegister = document.getElementById("open-register");
+      openRegister.addEventListener("click", function (e) {
+        e.preventDefault();
+        loginModal.style.display = "none";
+        document.getElementById("register-modal").style.display = "block";
+      });
+      // 對所有modal內的 close 按鈕綁定事件
+      document.querySelectorAll(".modal .close").forEach(function (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          // 利用 closest() 找到所在的 modal然後隱藏
+          closeBtn.closest(".modal").style.display = "none";
+        });
+      });
+      // 自動檢查是否登入
+      window.addEventListener("DOMContentLoaded", () => {
+        fetch("check.php")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "logged_in") {
+              updateHeaderAfterLogin(data.username);
+              closeAnyLoginModal(); // ✅ 自動關閉 modal
+            }
+          })
+          .catch((err) => console.error("登入狀態檢查錯誤：", err));
+      });
+
+      // 顯示 xxx你好 並隱藏登入按鈕
+      function updateHeaderAfterLogin(username) {
+        const signDiv = document.querySelector(".sign");
+        const loginBtn =
+          document.getElementById("member-login-btn") ||
+          document.getElementById("member-link");
+        if (signDiv) {
+          signDiv.innerHTML = `<span style="color:#2575fc;">${username} 你好</span>`;
+        }
+        if (loginBtn) {
+          loginBtn.style.display = "none";
+        }
+      }
+
+      // 若 modal 存在則關閉
+      function closeAnyLoginModal() {
+        const loginModalEl =
+          document.getElementById("loginModal") ||
+          document.getElementById("login-modal");
+        if (loginModalEl) {
+          const instance = bootstrap.Modal.getInstance(loginModalEl);
+          if (instance) {
+            instance.hide();
+          } else {
+            loginModalEl.style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

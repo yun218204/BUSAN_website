@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>聯絡我們</title>
+    <link rel="stylesheet" href="關於.css" />
+  </head>
+  <style>
+    input.error {
+      border: 3px solid red;
+      color: red;
+    }
+
+    /* Modal 樣式 */
+    .modal {
+      display: none; /* 預設隱藏 */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 300px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+    }
+    .modal-content form {
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-content form input {
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+    }
+    .modal-content form button {
+      padding: 10px;
+      background-color: #6a11cb;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .modal-content form button:hover {
+      background-color: #2575fc;
+    }
+  </style>
+  <body>
+    <div class="bubble-container">
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+    </div>
+
+    <div class="head">
+      <div class="logo">
+        <div class="title">
+          <p>
+            <a
+              href="./index.html"
+              style="text-decoration: none; color: rgba(236, 107, 107, 0.8)"
+              >喜歡旅行</a
+            >
+          </p>
+        </div>
+        <div class="sign">
+          <a href="#" id="member-link">會員專區</a><a href="#">同業專區</a>
+        </div>
+      </div>
+      <div class="navList">
+        <ul class="list">
+          <li><a href="#">主題專區</a></li>
+          <li><a href="#">國旅專區</a></li>
+          <li><a href="#">團體旅遊</a></li>
+          <li><a href="#">自由行專區</a></li>
+          <li><a href="#">機加酒</a></li>
+          <li><a href="#">訂房專區</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner">
+      <img src="./img/ZhenhaiPort_Fes.jpg" alt="banner" />
+      <div class="banner-text">
+        <h1>聯絡我們</h1>
+        <p>歡迎來電！專人為您服務</p>
+      </div>
+    </div>
+    <main class="main">
+      <div class="redColor">
+        <span>首頁</span>
+        <span>></span>
+        <span style="color: red">聯絡我們</span>
+      </div>
+    </main>
+
+    <div class="contactText">
+      <h2>有任何問題歡迎填寫以下資訊，由專人與您聯繫！</h2>
+
+      <form action="#" method="post" class="myForm">
+        <div class="form-group">
+          <label for="name" id="myName">姓名：</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="請輸入您的姓名"
+          />
+        </div>
+
+        <div class="gender">
+          <label>性別：</label>
+          <label
+            ><input type="radio" name="gender" value="male" required />
+            男</label
+          >
+          <label
+            ><input type="radio" name="gender" value="female" required />
+            女</label
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email" id="myEmail">信箱：</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="請輸入您的信箱"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone" id="myPhone">電話：</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            placeholder="請輸入您的電話"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message" id="myMessage">有任何問題歡迎詢問：</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            placeholder="請輸入您的問題"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn" id="btn">送出</button>
+      </form>
+    </div>
+    <a class="line-chat" href="#" target="_blank">
+      <img
+        src="https://no-02.com/wp-content/uploads/2024/07/icon-line-3.png"
+        alt="線上客服"
+    /></a>
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>會員登入</h2>
+        <form>
+          <label for="username">帳號:</label>
+          <input type="text" id="username" name="username" required />
+          <label for="password">密碼:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">登入</button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer-text">
+      <div class="toptext">
+        <h4>喜歡旅行社股份有限公司</h4>
+        <p>代表人:YUN</p>
+        <p>公司電話:0912345678</p>
+        <p>上班時間:周一至周五08:30~17:30</p>
+        <p>地址:台中市南屯區公益路二段51號</p>
+      </div>
+      <div class="bottomtext">
+        <p>&copy; 2025 Love Traveling. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- 固定在右下角的按鈕 -->
+    <a href="https://linxplore.netlify.app/" class="pilgrimage-btn"
+      >如果你想參加朝聖之路請點這</a
+    >
+    <script>
+      let head = document.querySelector(".head");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY == 0) {
+          head.style.boxShadow = "none"; // **當滾動回到頂部時，移除陰影**
+        } else {
+          head.style.boxShadow = "0 10px 6px -6px #777"; // **滾動時增加陰影**
+        }
+      });
+      // 當點擊「會員專區」時顯示登入 modal
+      let memberLink = document.getElementById("member-link");
+      let loginModal = document.getElementById("login-modal");
+      let closeModal = document.querySelector(".modal-content .close");
+
+      memberLink.addEventListener("click", function (e) {
+        e.preventDefault(); // 防止連結跳轉
+        loginModal.style.display = "block"; // 顯示 modal
+      });
+
+      // 點擊右上角的 × 關閉 modal
+      closeModal.addEventListener("click", function () {
+        loginModal.style.display = "none";
+      });
+
+      // 點擊 modal 區域外側關閉 modal
+      window.addEventListener("click", function (e) {
+        if (e.target == loginModal) {
+          loginModal.style.display = "none";
+        }
+      });
+    </script>
+    <script>
+      // JavaScript 部分
+      const myForm = document.querySelector(".myForm");
+      const nameInput = document.getElementById("name");
+      // 其他輸入欄位的正確選取
+      const emailInput = document.getElementById("email");
+      const phoneInput = document.getElementById("phone");
+      const messageInput = document.getElementById("message");
+
+      const btn = document.getElementById("btn");
+
+      btn.onclick = (event) => {
+        event.preventDefault();
+        let error = false;
+
+        if (nameInput.value.trim() === "") {
+          nameInput.classList.add("error");
+          nameInput.style.color = "red";
+          error = true;
+        } else {
+          nameInput.classList.remove("error");
+          nameInput.style = "";
+        }
+        if (email.value.trim() === "") {
+          email.classList.add("error");
+          email.style.color = "red";
+          error = true;
+        } else {
+          email.classList.remove("error");
+          email.style = "";
+        }
+        if (phone.value.trim() === "") {
+          phone.classList.add("error");
+          phone.style.color = "red";
+          error = true;
+        } else {
+          phone.classList.remove("error");
+          phone.style = "";
+        }
+        if (message.value.trim() === "") {
+          message.classList.add("error");
+          message.style.color = "red";
+          error = true;
+        } else {
+          message.classList.remove("error");
+          message.style = "";
+        }
+        // 可針對其他欄位加入驗證邏輯
+      };
+    </script>
+  </body>
+</html>
